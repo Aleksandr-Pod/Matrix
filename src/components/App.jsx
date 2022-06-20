@@ -1,11 +1,11 @@
-import { genMatryx, calcSums, calcMeans } from './operateMatryx';
-import { Tdata, Tsum, Tmeans } from './table.styled';
-  const data = genMatryx(3, 5);
-  const sumsColumn = calcSums(data);
-  const meansLine = calcMeans(data);
+import { useSelector } from 'react-redux';
+import { Tdata, Tsum, Tmeans } from './table/table.styled';
+import { calcSums, calcMeans } from './table/operateMatryx';
 
 export const App = () => {
-
+const data = useSelector(store => store.data);
+const sumsColumn = calcSums(data);
+const meansLine = calcMeans(data);
   return (
     <table>
       {/* header row */}
