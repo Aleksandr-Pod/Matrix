@@ -10,7 +10,10 @@ export const dataSlice = createSlice({
     name: 'data',
     initialState: data,
     reducers: {
-        changeData(state, { payload }) { state[payload.x][payload.y].value += 1 }
+        changeData(state, { payload }) {
+            console.log('payload', payload);
+            state[payload.x][payload.y].value += 1
+        }
     }
 })
 export const { changeData } = dataSlice.actions; 

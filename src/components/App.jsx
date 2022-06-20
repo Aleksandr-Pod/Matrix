@@ -1,11 +1,13 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Tdata, Tsum, Tmeans } from './table/table.styled';
 import { calcSums, calcMeans } from './table/operateMatryx';
+import { changeData } from './reducers/dataSlice';
 
 export const App = () => {
-const data = useSelector(store => store.data);
-const sumsColumn = calcSums(data);
-const meansLine = calcMeans(data);
+  const dispatch = useDispatch();
+  const data = useSelector(store => store.data);
+  const sumsColumn = calcSums(data);
+  const meansLine = calcMeans(data);
   return (
     <table>
       {/* header row */}
@@ -20,9 +22,9 @@ const meansLine = calcMeans(data);
       {/* main table */}
       <tbody>
         {data.map((line, idx1) => (
-          <tr><Tsum key={`s${idx1}`}>{sumsColumn[idx1]}</Tsum>
+          <tr key={`s${idx1}`}><Tsum>{sumsColumn[idx1]}</Tsum>
             {line.map((el, idx2) => (
-              <Tdata key={`s${idx1}-d${idx2}`}>{el.value}</Tdata>
+              <Tdata key={`s${idx1}-d${idx2}`} onClick={() => dispatch(changeData({x:idx1, y:idx2}))}>{el.value}</Tdata>
             ))}
           </tr>
         ))}
