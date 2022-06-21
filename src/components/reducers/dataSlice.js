@@ -19,7 +19,7 @@ export const percentSlice = createSlice({
     reducers: {
         setPercent(state, { payload }) {
             console.log('percent action', payload)
-            state = "yes"
+            state = payload;
         }
     }
 })
