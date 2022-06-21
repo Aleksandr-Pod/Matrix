@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { dataSlice } from './reducers/dataSlice';
+import { dataSlice, percentSlice } from './reducers/dataSlice';
 
 export const store = configureStore({
-    reducer: { data: dataSlice.reducer}
+    reducer: {
+        data: dataSlice.reducer,
+        percent: percentSlice.reducer
+    }
+    
 
     // middleware: getDefaultMiddleware => 
     //     getDefaultMiddleware().concat(contactsAPI.middleware)
