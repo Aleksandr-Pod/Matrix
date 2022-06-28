@@ -12,7 +12,7 @@ export const App = () => {
   const showPercent = (idx) => {
     const totalSumm = sumsColumn.reduce((accum, next) => accum + next, 0);
     const calcPercent = ((sumsColumn[idx] / totalSumm) * 100).toFixed(3);
-    dispatch(setPercent(calcPercent))
+    dispatch(setPercent(calcPercent));
   }
 
   return (
@@ -33,7 +33,7 @@ export const App = () => {
             <Tsum
             onMouseEnter={() => showPercent(idx1)}
             onMouseLeave={() => dispatch(setPercent(null))}>
-              {percent === null ? sumsColumn[idx1] : percent}
+              {(percent === null) ? sumsColumn[idx1] : percent}
             </Tsum>
             {line.map((el, idx2) => (
               <Tdata key={`s${idx1}-d${idx2}`} onClick={() => dispatch(changeData({x:idx1, y:idx2}))}>{el.value}</Tdata>

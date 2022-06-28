@@ -15,7 +15,6 @@ export function genMatryx(row, column) {
 export function calcSums(data) {
     return data.map(line => {
         const summ = line.reduce((accum, el) => accum + el.value, 0);
-        console.log('summ of a line:', summ);
         return summ;
     })
 }
