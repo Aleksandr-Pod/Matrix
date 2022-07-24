@@ -6,12 +6,13 @@ export const Tdata = styled.td`
     background-color: yellow;
 `
 export const Tsum = styled.th`
-    width: 50px;
+    width: 70px;
+    padding: 5px;
     text-align: center;
     background-color: pink;
 `
 export const Tmeans = styled.th`
-    width: 50px;
+    width: 70px;
     text-align: center;
     background-color: gray;
 `

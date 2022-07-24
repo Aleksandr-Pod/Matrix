@@ -24,7 +24,9 @@ export function calcMeans(data) {
     const columns = data[0].length;
 
     for (let i = 0; i < columns; i += 1) {
-        meansLine.push(Math.floor(data.reduce((accum, nextLine) => accum + nextLine[i].value, 0)/rows))
+        meansLine.push(Math.floor(
+            data.reduce((accum, nextLine) => accum + nextLine[i].value, 0) / rows
+        ))
     }
     return meansLine;
 }
