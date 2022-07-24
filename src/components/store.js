@@ -6,8 +6,4 @@ export const store = configureStore({
         data: dataSlice.reducer,
         percent: percentSlice.reducer
     }
-    
-
-    // middleware: getDefaultMiddleware => 
-    //     getDefaultMiddleware().concat(contactsAPI.middleware)
 })

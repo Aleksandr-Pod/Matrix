@@ -28,15 +28,15 @@ export const App = () => {
       </thead>
       {/* main table */}
       <tbody>
-        {data.map((line, idx1) => (
-          <tr key={`s${idx1}`}>
+        {data.map((line, idxRow) => (   // row
+          <tr key={`s${idxRow}`}>
             <Tsum
-            onMouseEnter={() => showPercent(idx1)}
-              onMouseLeave={() => dispatch(setPercent({ calcPercent: undefined, idx: idx1 }))}>
-              {percent[idx1] === undefined ? sumsColumn[idx1] : `${percent[idx1]} %`}
+            onMouseEnter={() => showPercent(idxRow)}
+              onMouseLeave={() => dispatch(setPercent({ calcPercent: undefined, idx: idxRow }))}>
+              {percent[idxRow] === undefined ? sumsColumn[idxRow] : `${percent[idxRow]} %`}
             </Tsum>
-            {line.map((el, idx2) => (
-              <Tdata key={`s${idx1}-d${idx2}`} onClick={() => dispatch(changeData({x:idx1, y:idx2}))}>{el.value}</Tdata>
+            {line.map((el, idxCol) => (   // columns
+              <Tdata key={`s${idxRow}-d${idxCol}`} onClick={() => dispatch(changeData({x:idxRow, y:idxCol}))}>{el.value}</Tdata>
             ))}
           </tr>
         ))}
