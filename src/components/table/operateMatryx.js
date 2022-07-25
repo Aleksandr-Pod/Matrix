@@ -19,14 +19,14 @@ export function calcSums(data) {
     })
 }
 export function calcMeans(data) {
-    const meansLine = [];
+    const meansColumn = [];
     const rows = data.length;
     const columns = data[0].length;
 
     for (let i = 0; i < columns; i += 1) {
-        meansLine.push(Math.floor(
+        meansColumn.push(Math.floor(
             data.reduce((accum, nextLine) => accum + nextLine[i].value, 0) / rows
         ))
     }
-    return meansLine;
+    return meansColumn;
 }
