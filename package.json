@@ -1,8 +1,8 @@
 {
-  "name": "Matrix on Redux",
+  "name": "matrix_on_redux",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aleksandr-pod.github.io/Matrix/",
+  "homepage": "https://aleksandr-pod.github.io/matrix/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.3",
