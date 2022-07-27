@@ -10,6 +10,9 @@ export const Tsum = styled.th`
     padding: 5px;
     text-align: center;
     background-color: pink;
+    :hover {
+        background-color: orange;
+    }
 `
 export const Tmeans = styled.th`
     width: 70px;
